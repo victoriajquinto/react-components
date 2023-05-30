@@ -5,11 +5,8 @@
 //   document.getElementById('app')
 // );
 
-// Here we create a `TodoList` component
 
 const { useState } = React;
-
-// const IndividualIngredient = (props) => <li>{props.ingredient}</li>
 
 const IndividualIngredient = (props) => {
   const [isBold, setIsBold] = useState(false);
@@ -19,18 +16,28 @@ const IndividualIngredient = (props) => {
   return (
     <li style = {style} onMouseOver = {() => setIsBold(!isBold)}>{props.ingredient}</li>
   )
+};
+
+/*WORKS*/
+// const ItemsNeeded = (props) => (
+//   <ul>
+//     {props.items.map((ingredient) => (
+//       <IndividualIngredient ingredient = {ingredient} />
+//     ))}
+//   </ul>
+// );
+
+/*WORKS*/
+function ItemsNeeded(props) {
+  return (
+    <ul>
+      {props.items.map((ingredient) => (
+        <IndividualIngredient ingredient = {ingredient} />
+      ))}
+    </ul>
+  )
 }
-
-
-const ItemsNeeded = (props) => (
-  <ul>
-    {props.items.map((ingredient) => (
-      <IndividualIngredient ingredient = {ingredient} />
-    ))}
-  </ul>
-)
-
-
+/*WORKS*/
 const GroceryList = () => (
   <div>
     <h2>Vicky's Grocery List</h2>
@@ -38,6 +45,15 @@ const GroceryList = () => (
   </div>
 );
 
+/*DOESN'T WORK*/
+// const Grocerylist = function() {
+//   return (
+//     <div>
+//      <h2>Vicky's Grocery List</h2>
+//      <ItemsNeeded items={['Milk', 'Juice', 'Cheese']} />
+//    </div>
+//   )
+// };
 
 ReactDOM.render(
   <GroceryList/>,
