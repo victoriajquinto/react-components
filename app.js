@@ -12,6 +12,7 @@ const IndividualIngredient = (props) => {
   const [isBold, setIsBold] = useState(false);
   const style = {
     fontWeight: isBold ? 'bold' : 'normal',
+    color: isBold? 'goldenrod': 'black',
   };
   return (
     <li style = {style} onMouseOver = {() => setIsBold(!isBold)}>{props.ingredient}</li>
@@ -45,7 +46,7 @@ const GroceryList = () => (
   </div>
 );
 
-/*DOESN'T WORK*/
+/*DOESN'T WORK -- is it because the parent format needs to formatted a specific way?*/
 // const Grocerylist = function() {
 //   return (
 //     <div>
